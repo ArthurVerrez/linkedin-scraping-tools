@@ -1,4 +1,4 @@
-# LinkedIn Scraping Tools
+# LinkedIn Scraping Tools with Selenium
 ## Description
 This repository is composed of different utilities that can be useful to scrape LinkedIn data. The tools are written in Python and use the Selenium library to interact with the LinkedIn website. The tools are designed to be used with the Chrome web browser, but can be modified to work with other browsers.
 
