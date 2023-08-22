@@ -6,7 +6,7 @@ Here are the different tools that are currently available:
 
 | Tool | Description | Python file | LinkedIn Plan Compatibility |
 | --- | --- | --- | --- |
-| LinkedIn Sales Navigator Search Scraper | A tool that scraps the profiles available in a given LinkedIn Sales Nav search | *lksn_search_scraper.py* | Sales Navigator (Any) |
+| LinkedIn Sales Navigator Search Scraper | A tool that scraps the profiles available in a given LinkedIn Sales Nav search | *lksn_search_scraper.py* | Any Sales Navigator |
 | LinkedIn Recruiter Search Scraper (WIP) | A tool that scraps the profiles available in a given LinkedIn Recruiter search | *lkr_search_scraper.py* | Recruiter, Recruiter Lite |
 | LinkedIn Visitor | A tool that takes all the profiles available in a given LinkedIn Recruiter search and visits their page, providing a visit notification if the privacy settings are correctly set up | *lk_visitor.py* | Any (even free, but careful of the limitations) |
 
