@@ -26,21 +26,19 @@ Create a new file called *lk_credentials.json* at the root of the project and ad
 }
 ```
 
-
-
 ## Usage
 ### LinkedIn Sales Navigator Search Scraper
 Below are the options you can use:
 
---search-url: The URL of the search page to scrape (required).
---start-page: The page to start scraping from (optional, default is 1).
---end-page: The page to end scraping at (optional, default is 1).
---wait-time-between-pages: The time in seconds to wait between pages (optional, default is 5).
---wait-after-page-loaded: The time in seconds to wait after the page is loaded (optional, default is 3).
---wait-after-scroll-down: The time in seconds to wait after scrolling down (optional, default is 3).
---save-format: The format to save the data in (optional, available options: "xlsx" or "csv", default is "csv").
+*--search-url*: The URL of the search page to scrape (required).\
+*--start-page*: The page to start scraping from (optional, default is 1).\
+*--end-page*: The page to end scraping at (optional, default is 1).\
+*--wait-time-between-pages*: The time in seconds to wait between pages (optional, default is 5).\
+*--wait-after-page-loaded*: The time in seconds to wait after the page is loaded (optional, default is 3).\
+*--wait-after-scroll-down*: The time in seconds to wait after scrolling down (optional, default is 3).\
+*--save-format*: The format to save the data in (optional, available options: "xlsx" or "csv", default is "csv").
 
-Example
+#### Example
 You can run the script with the following command:
 ```bash	
 python lksn_search_scraper.py --search-url "https://www.linkedin.com/sales/search/people?query=(spellCorrectionEnabled%3Atrue%2Ckeywords%3Ascraping)" --start-page 1 --end-page 5 --save-format "csv"
