@@ -3,7 +3,7 @@ This is meant to be run as a CLI script.
 It will scrap the search results of a LinkedIn Sales Navigator search.
 
 Example usage:
-python3 lksn_search_scraper.py --search-url "https://www.linkedin.com/sales/search/people?query=(spellCorrectionEnabled%3Atrue%2Ckeywords%3Ascraping)"
+python lksn_search_scraper.py --search-url "https://www.linkedin.com/sales/search/people?query=(spellCorrectionEnabled%3Atrue%2Ckeywords%3Ascraping)"
 """
 import argparse
 import os
@@ -210,7 +210,6 @@ def scrap_lksn_pages(
     return total_info
 
 
-# Now we can run the main script
 if __name__ == "__main__":
     # Parse the arguments
     parser = argparse.ArgumentParser(description="Scrap LinkedIn Sales Navigator")
@@ -277,7 +276,7 @@ if __name__ == "__main__":
     print("Starting the driver...")
     logging.getLogger("selenium").setLevel(logging.CRITICAL)
     # Start the webdriver without any logs
-    driver = webdriver.Chrome(options=Options(), service_log_path=os.devnull)
+    driver = webdriver.Chrome(options=Options())
     driver.maximize_window()
     driver.get("https://www.linkedin.com/login/")
 
@@ -327,3 +326,5 @@ if __name__ == "__main__":
             index=False,
         )
         print(f"Saved to ./lksn_data/{file_name}")
+
+    driver.close()

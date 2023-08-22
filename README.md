@@ -4,12 +4,11 @@ This repository is composed of different utilities that can be useful to scrape 
 
 Here are the different tools that are currently available:
 
-| Tool | Description | Python file |
-| --- | --- | --- |
-| LinkedIn Sales Navigator Search Scraper | A tool that scraps the profiles available in a given LinkedIn Sales Nav search | *lksn_search_scraper.py* |
-| LinkedIn Sales Navigator Search Visit (WIP) | A tool that takes all the profiles available in a given LinkedIn Sales Nav search and visits their page, providing a visit notification if the privacy settings are correctly set up | *lksn_search_visit.py* |
-| LinkedIn Recruiter Search Scraper (WIP) | A tool that scraps the profiles available in a given LinkedIn Recruiter search | *lkr_search_scraper.py* |
-| LinkedIn Recruiter Search Visit (WIP) | A tool that takes all the profiles available in a given LinkedIn Recruiter search and visits their page, providing a visit notification if the privacy settings are correctly set up | *lkr_search_visit.py* |
+| Tool | Description | Python file | LinkedIn Plan Compatibility |
+| --- | --- | --- | --- |
+| LinkedIn Sales Navigator Search Scraper | A tool that scraps the profiles available in a given LinkedIn Sales Nav search | *lksn_search_scraper.py* | Sales Navigator (Any) |
+| LinkedIn Recruiter Search Scraper (WIP) | A tool that scraps the profiles available in a given LinkedIn Recruiter search | *lkr_search_scraper.py* | Recruiter, Recruiter Lite |
+| LinkedIn Visitor | A tool that takes all the profiles available in a given LinkedIn Recruiter search and visits their page, providing a visit notification if the privacy settings are correctly set up | *lk_visitor.py* | Any (even free, but careful of the limitations) |
 
 ## Installation
 ```bash
@@ -44,14 +43,25 @@ You can run the script with the following command:
 python lksn_search_scraper.py --search-url "https://www.linkedin.com/sales/search/people?query=(spellCorrectionEnabled%3Atrue%2Ckeywords%3Ascraping)" --start-page 1 --end-page 5 --save-format "csv"
 ```
 
-### LinkedIn Sales Navigator Search Visit
-To come soon...
+### LinkedIn Visitor
+Below are the options you can use:
+
+*--profile_file*: Path to the file containing the profiles to visit (accepts .csv and .xlsx as long as it has a column named 'linkedin_url') (required).\
+*--shortest_wait_time*: Shortest wait time in seconds between actions (optional, default is 4).\
+*--longest_wait_time*: Longest wait time in seconds between actions (optional, default is 7).\
+*--page_load_time*: Time to wait in seconds for the page to load (optional, default is 3).
+
+#### Example
+You can run the script with the following command:
+```bash
+python your_script_name.py --profile_file "./lksn_data/1692694694168_lk_salesnav_export.csv" --shortest_wait_time 3 --longest_wait_time 8 --page_load_time 4
+```
+
+
 
 ### LinkedIn Recruiter Search Scraper
 To come soon...
 
-### LinkedIn Recruiter Search Scraper
-To come soon...
 
 ## Disclaimer
 The tools and code provided in this repository were created for educational purposes only. Utilizing these tools to scrape or interact with LinkedIn or any other websites in a manner that breaches their terms of service is strictly against the intended use. Anyone who chooses to use these tools in such a way does so at their own risk and assumes all legal responsibility. The author does not endorse or promote any actions that may violate any website's terms of service.
