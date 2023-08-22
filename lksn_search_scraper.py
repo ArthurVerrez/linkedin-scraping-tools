@@ -15,7 +15,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import pandas as pd
 from general_lk_utils import (
-    remove_page_parameter,
+    remove_url_parameter,
     get_lk_credentials,
     enter_ids_on_lk_signin,
     get_lk_url_from_sales_lk_url,
@@ -271,7 +271,7 @@ if __name__ == "__main__":
     wait_after_page_loaded = args.wait_after_page_loaded
     wait_after_scroll_down = args.wait_after_scroll_down
     save_format = args.save_format
-    search_url_base = remove_page_parameter(search_url)
+    search_url_base = remove_url_parameter(search_url, "page")
 
     print("Starting the driver...")
     logging.getLogger("selenium").setLevel(logging.CRITICAL)

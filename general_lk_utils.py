@@ -48,12 +48,12 @@ def select_contract_lk(driver):
     return
 
 
-def remove_page_parameter(url):
+def remove_url_parameter(url, param):
     parsed_url = urlparse(url)
     query_params = parse_qs(parsed_url.query)
 
-    if "page" in query_params:
-        del query_params["page"]
+    if param in query_params:
+        del query_params[param]
 
     new_query = urlencode(query_params, doseq=True)
     new_url = urlunparse(
